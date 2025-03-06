@@ -142,7 +142,10 @@ public class Program {
                 string autore = ReadLine();
                 Write("Categoria: ");
                 string categoria = ReadLine();
-                int id = GetID();
+				int id;
+				do {
+					WriteLine("Inserisci ID:");
+				} while (!int.TryParse(ReadLine(), out id) || id <= 0 || Ricerca(libri, id) != -1);
                 double prezzo;
                 do {
                     Write("Prezzo: ");
